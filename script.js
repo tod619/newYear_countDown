@@ -4,13 +4,17 @@ const minutes = document.getElementById('minutes')
 const seconds = document.getElementById('seconds')
 const countdown = document.getElementById('countdown')
 
+const loading = document.getElementById('loading')
+
 const year = document.getElementById('year')
 
 const currentYear = new Date().getFullYear()
 const newYearTime = new Date(`Janurary 01 ${currentYear + 1} 00:00:00`)
 
+// add year to dom
 year.innerText = currentYear + 1
 
+// update countdown
 function updateCountdown() {
     const currentTime = new Date()
     const diff = newYearTime - currentTime
@@ -28,4 +32,11 @@ function updateCountdown() {
 
 }
 
+// show spinner before countdown
+setTimeout(()=>{
+    loading.remove()
+    countdown.style.display = 'flex'
+},1000)
+
+// Run every second
 setInterval(updateCountdown, 1000)
