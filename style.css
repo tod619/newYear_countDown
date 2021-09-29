@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("bg_img.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Overlay for background img */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body * {
+  z-index: 1;
+}
